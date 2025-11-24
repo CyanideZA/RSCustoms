@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS Customs | Premium Car Wash & Detailing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #ff6d00;
+            --secondary: #000000;
+            --light: #f5f5f5;
+            --dark: #333;
+            --gray: #6c757d;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--light);
+            background-color: var(--secondary);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 100px; /* Adjust the height as needed */
+            width: auto;  /* Keep aspect ratio */
+        }
+
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--light);
+            margin-left: 10px;
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        nav {
+            font-family: 'Ethnocentric-Regular', sans-serif;
+            letter-spacing: 1px;
+            font-size: 18px;
+        }
+
+        @font-face {
+            font-family: 'Ethnocentric-Regular';
+            src: url('Font/Ethnocentric-Regular.woff2') format('woff2'),
+            url('Font/Ethnocentric-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #e65c00;
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--secondary);
+        }
+
+        .btn-primary:hover {
+            background-color: #e65c00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light);
+            border: 2px solid var(--light);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light);
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        .sponsor-banner {
+            background: #00000d;
+            padding: 20px 0;
+            position: relative;
+            z-index: 1;
+
+            border-top: 2px solid #ff6a00;
+            border-bottom: 2px solid #ff6a00;
+
+            /* Even, smooth orange glow */
+            box-shadow:
+                    0 -6px 20px rgba(255, 106, 0, 0.55),
+                    0  6px 20px rgba(255, 106, 0, 0.55);
+        }
+
+
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 60px;
+            width: max-content;
+            animation: marqueeScroll 20s linear infinite;
+        }
+
+        .marquee-track img {
+            height: 100px;
+            width: auto;
+            filter: brightness(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .marquee-track img:hover {
+            transform: scale(1.1);
+        }
+
+        /* SEAMLESS SCROLL KEYFRAME */
+        @keyframes marqueeScroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+
+        /* Services Section */
+        .service-features {
+            margin: 15px 0 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ccc;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .service-features li i {
+            color: var(--primary);
+            font-size: 1rem;
+            background: rgba(255, 109, 0, 0.15);
+            padding: 6px;
+            border-radius: 50%;
+        }
+
+        .section {
+            padding: 100px 0;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .services {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--light);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title p {
+            color: #ddd;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 109, 0, 0.3);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .service-img {
+            height: 200px;          /* keep the container height */
+            overflow: hidden;       /* crop overflow like background-image */
+            border-radius: 10px 10px 0 0; /* optional, if your cards have rounded top corners */
+            position: relative;     /* for positioning child img */
+        }
+
+        .service-img-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;      /* fills container and keeps aspect ratio, cropping excess */
+            object-position: center; /* same as background-position: center */
+            display: block;
+        }
+
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .service-content p {
+            color: #bbb;
+            margin-bottom: 15px;
+        }
+
+        .service-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Quality Guaranteed Section */
+        .quality {
+            padding: 80px 0;
+            background: #00000d;
+            border-top: 2px solid #ff6a00;
+            border-bottom: 2px solid #ff6a00;
+            box-shadow:
+                    0 -4px 16px rgba(255, 106, 0, 0.3),
+                    0 4px 16px rgba(255, 106, 0, 0.3);
+        }
+
+        .quality-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .quality-title h2 {
+            font-size: 2.2rem;
+            color: #ff6a00;
+        }
+
+        .quality-title p {
+            color: #dcdcdc;
+            max-width: 650px;
+            margin: 10px auto 0;
+        }
+
+        .quality-badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .badge-card {
+            background: rgba(15, 15, 25, 0.9);
+            padding: 35px 25px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid rgba(255, 106, 0, 0.35);
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 106, 0, 0.15);
+        }
+
+        .badge-card:hover {
+            transform: translateY(-6px);
+            box-shadow:
+                    0 0 20px rgba(255, 106, 0, 0.45),
+                    0 0 40px rgba(255, 106, 0, 0.25);
+        }
+
+        .badge-icon {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, #ff6a00, #ff4500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 18px rgba(255, 106, 0, 0.5);
+        }
+
+        .badge-icon i {
+            font-size: 30px;
+            color: #ffffff;
+        }
+
+        .badge-card h3 {
+            margin-top: 10px;
+            font-size: 1.4rem;
+            color: #ffffff;
+        }
+
+        .badge-card p {
+            color: #d4d4d4;
+            margin-top: 8px;
+        }
+
+
+        .about {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('Images/Background1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ddd;
+        }
+
+        .feature i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 109, 0, 0.3);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #ddd;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .testimonial-text::before {
+            content: """;
+            font-size: 60px;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            left: -10px;
+            top: -20px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #444;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--light);
+        }
+
+        .author-info p {
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1565689228864-0aa6f43b6e8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 109, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: var(--light);
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul li {
+                margin-left: 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+
+        nav, nav * {
+            font-family: 'Ethnocentric-Regular', sans-serif !important;
+        }
+
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header>
+    <div class="container header-container">
+
+        <div class="logo">
+            <a href="#home">
+                <img src="Images/LogoTest3.jpg" alt="RS Customs Logo" class="logo-img">
+            </a>
+        </div>
+
+        <nav id="mainNav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="checklist.html" class="active">Checklist</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="cta-button">Book Now</a>
+        <div class="mobile-menu" id="mobileMenu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Premium Car Wash & Detailing</h1>
+            <p>We bring the shine back to your vehicle with our premium cleaning and detailing services. Book now for a spotless ride!</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">Our Services</a>
+                <a href="#contact" class="btn btn-secondary">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section services" id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>We offer a range of premium car cleaning and detailing services to keep your vehicle looking its best.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="Images/Service1.jpg" alt="Exterior Wash" class="service-img-img">
+                </div>
+                <div class="service-content">
+                    <h3>Exterior Wash</h3>
+                    <p>Complete exterior cleaning with premium products to remove dirt, grime, and restore shine.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Thick snow-foam pre-wash</li>
+                        <li><i class="fas fa-check"></i> Two-bucket safe hand wash</li>
+                        <li><i class="fas fa-check"></i> Deep wheel, tyre & arch cleaning</li>
+                        <li><i class="fas fa-check"></i> Gentle air & microfiber dry</li>
+                        <li><i class="fas fa-check"></i> Tyre shine finish</li>
+                        <li><i class="fas fa-check"></i> Shine Guaranteed!</li>
+                    </ul>
+                    <div class="service-price">From R150</div>
+                    <a href="#contact" class="cta-button">Book Now</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="Images/Service2.jpg" alt="Interior Detailing" class="service-img-img">
+                </div>
+                <div class="service-content">
+                    <h3>Interior Detailing</h3>
+                    <p>Deep cleaning of your vehicle's interior including seats, carpets, windows, and all surfaces.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Full vacuum of seats, carpets & boot</li>
+                        <li><i class="fas fa-check"></i> Deep fabric shampoo OR leather treatment</li>
+                        <li><i class="fas fa-check"></i> Dashboard, trim & vents deep clean</li>
+                        <li><i class="fas fa-check"></i> Interior deodorising & bacteria wipe-down</li>
+                        <li><i class="fas fa-check"></i> Window & mirror clean (inside)</li>
+                    </ul>
+                    <div class="service-price">From R300</div>
+                    <a href="#contact" class="cta-button">Book Now</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="Images/Service3.jpg" alt="Full Detailing Package" class="service-img-img">
+                </div>
+                <div class="service-content">
+                    <h3>Full Detailing Package</h3>
+                    <p>Complete inside and out detailing for the ultimate clean and protection for your vehicle.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Complete exterior wash & decontamination</li>
+                        <li><i class="fas fa-check"></i> Clay bar treatment for smooth paint</li>
+                        <li><i class="fas fa-check"></i> Protective wax or sealant application</li>
+                        <li><i class="fas fa-check"></i> Full interior shampoo or leather restoration</li>
+                        <li><i class="fas fa-check"></i> Engine bay light clean (optional)</li>
+                    </ul>
+                    <div class="service-price">From R500</div>
+                    <a href="#contact" class="cta-button">Book Now</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Quality Guaranteed Section -->
+<section class="section quality" id="quality">
+    <div class="container">
+        <div class="quality-title">
+            <h2>Our Quality Guarantee</h2>
+            <p>Every vehicle we touch receives unmatched attention, premium care, and professional precision.</p>
+        </div>
+
+        <div class="quality-badges">
+            <!-- Badge 1 -->
+            <div class="badge-card">
+                <div class="badge-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Premium Standards</h3>
+                <p>We use top-tier products and techniques to ensure your vehicle always looks its best.</p>
+            </div>
+
+            <!-- Badge 2 -->
+            <div class="badge-card">
+                <div class="badge-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Expert Detailing</h3>
+                <p>Our trained specialists deliver consistent, high-quality workmanship you can rely on.</p>
+            </div>
+
+            <!-- Badge 3 -->
+            <div class="badge-card">
+                <div class="badge-icon">
+                    <i class="fas fa-thumbs-up"></i>
+                </div>
+                <h3>Satisfaction Guaranteed</h3>
+                <p>Your satisfaction is our priority. If you're not happy, we make it right.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="sponsor-banner">
+    <div class="marquee">
+        <div class="marquee-track">
+            <!-- LOGOS (one set) -->
+            <img src="Images/CarLogo1.png">
+            <img src="Images/CarLogo2.png">
+            <img src="Images/CarLogo3.png">
+            <img src="Images/CarLogo4.png">
+            <img src="Images/CarLogo5.png">
+            <img src="Images/CarLogo6.png">
+            <img src="Images/CarLogo7.png">
+            <img src="Images/CarLogo8.png">
+            <img src="Images/CarLogo9.png">
+            <img src="Images/CarLogo10.png">
+            <img src="Images/CarLogo11.png">
+            <img src="Images/CarLogo12.png">
+            <img src="Images/CarLogo13.png">
+            <img src="Images/CarLogo14.png">
+            <img src="Images/CarLogo15.png">
+            <img src="Images/CarLogo16.png">
+            <img src="Images/CarLogo17.png">
+            <img src="Images/CarLogo18.png">
+            <img src="Images/CarLogo19.png">
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- About Section -->
+<section class="section about" id="about">
+    <div class="container">
+        <div class="about-container">
+            <div class="about-img">
+                <img src="Images/LogoTest2.png" alt="RS Customs Team">
+            </div>
+            <div class="about-content">
+                <h2>About RS Customs</h2>
+                <p>RS Customs is a premium automotive care and detailing brand dedicated to delivering a showroom-finish experience every time. With over a decade of industry expertise, we’ve built a reputation for precision, professionalism, and unmatched results.</p>
+
+                <p>From daily drivers to high-performance machines, our specialists treat every vehicle with the same level of passion and care. We use advanced techniques, cutting-edge equipment, and top-quality products to ensure superior protection, enhanced appearance, and long-lasting results.</p>
+
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Premium, Eco-Safe Cleaning Products</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Skilled & Certified Detailing Experts</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Convenient Mobile & In-Shop Service</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Quality Workmanship Guaranteed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Testimonials Section -->
+<section class="section testimonials" id="testimonials">
+    <div class="container">
+        <div class="section-title">
+            <h2>What Our Customers Say</h2>
+            <p>Don't just take our word for it - hear from our satisfied customers</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "RS Customs did an amazing job on my car! The interior looks brand new and the exterior has never been shinier. Highly recommended!"
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h4>James Wilson</h4>
+                        <p>Johannesburg</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "I've tried many car wash services, but RS Customs is by far the best. Their attention to detail is impressive and the results speak for themselves."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>Cape Town</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "The mobile service is so convenient! They came to my office and had my car looking showroom-ready by the time I finished work. Fantastic service!"
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h4>Michael Brown</h4>
+                        <p>Durban</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section contact" id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Get in touch to book our services or ask any questions</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>123 Car Care Street, Johannesburg</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>+27 11 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>info@rscustoms.co.za</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Required</label>
+                        <select id="service" class="form-control" required>
+                            <option value="">Select a service</option>
+                            <option value="exterior">Exterior Wash</option>
+                            <option value="interior">Interior Detailing</option>
+                            <option value="full">Full Detailing Package</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Book Appointment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>RS Customs</h3>
+                <p>Professional car wash and detailing services that bring back the shine to your vehicle.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Exterior Wash</a></li>
+                    <li><a href="#">Interior Detailing</a></li>
+                    <li><a href="#">Full Detailing Package</a></li>
+                    <li><a href="#">Mobile Service</a></li>
+                    <li><a href="#">Corporate Packages</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Car Care Street, Johannesburg</li>
+                    <li><i class="fas fa-phone"></i> +27 11 123 4567</li>
+                    <li><i class="fas fa-envelope"></i> info@rscustoms.co.za</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 RS Customs. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+  // Mobile Menu Toggle
+  document.getElementById('mobileMenu').addEventListener('click', function() {
+    const nav = document.getElementById('mainNav');
+    nav.classList.toggle('active');
+  });
+
+  // Form Submission
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your booking request! We will contact you shortly to confirm your appointment.');
+    this.reset();
+  });
+
+  // Header background on scroll
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 100) {
+      header.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+    } else {
+      header.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    }
+  });
+
+  // Close mobile menu when clicking on a link
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function() {
+      document.getElementById('mainNav').classList.remove('active');
+    });
+  });
+</script>
+</body>
+</html>

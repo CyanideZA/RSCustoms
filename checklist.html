@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Wash Business Startup Checklist | Soapy Rides</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #ff6d00;
+            --secondary: #000000;
+            --light: #f5f5f5;
+            --dark: #333;
+            --gray: #6c757d;
+            --success: #28a745;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== CUSTOM SCROLLBARS ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-left: 1px solid #333;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #ff6200, #cc4e00);
+            border-radius: 10px;
+            border: 2px solid #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #ff7a26, #e05d00);
+        }
+
+        ::-webkit-scrollbar-corner {
+            background: #1a1a1a;
+        }
+
+        /* Firefox Support */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #ff6200 #1a1a1a;
+        }
+
+
+        body {
+            line-height: 1.6;
+            color: var(--light);
+            background-color: var(--secondary);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 100px; /* Adjust the height as needed */
+            width: auto;  /* Keep aspect ratio */
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--light);
+            margin-left: 10px;
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        nav {
+            font-family: 'Ethnocentric-Regular', sans-serif;
+            letter-spacing: 1px;
+            font-size: 18px;
+        }
+
+        @font-face {
+            font-family: 'Ethnocentric-Regular';
+            src: url('Font/Ethnocentric-Regular.woff2') format('woff2'),
+            url('Font/Ethnocentric-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #e65c00;
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        /* Checklist Section */
+        .checklist-section {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--light);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title p {
+            color: #ddd;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .progress-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 109, 0, 0.3);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .progress-title {
+            font-size: 1.5rem;
+            color: var(--light);
+        }
+
+        .progress-percentage {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        .progress-text {
+            text-align: right;
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+
+        .checklist-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 109, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-header {
+            background-color: rgba(255, 109, 0, 0.2);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            color: var(--light);
+        }
+
+        .category-progress {
+            margin-left: auto;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .checklist-items {
+            padding: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            margin-right: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .checklist-checkbox.checked {
+            background-color: var(--primary);
+        }
+
+        .checklist-checkbox.checked::after {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .checklist-text {
+            flex: 1;
+            color: #ddd;
+        }
+
+        .checklist-item.completed .checklist-text {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .checklist-priority {
+            font-size: 0.8rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        .priority-high {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .priority-medium {
+            background-color: #ffc107;
+            color: var(--secondary);
+        }
+
+        .priority-low {
+            background-color: #17a2b8;
+            color: white;
+        }
+
+        .checklist-actions {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .action-button {
+            background-color: var(--primary);
+            color: var(--secondary);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .action-button:hover {
+            background-color: #e65c00;
+            transform: translateY(-2px);
+        }
+
+        .action-button.secondary {
+            background-color: transparent;
+            color: var(--light);
+            border: 1px solid var(--primary);
+        }
+
+        .action-button.secondary:hover {
+            background-color: rgba(255, 109, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: var(--light);
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        nav, nav * {
+            font-family: 'Ethnocentric-Regular', sans-serif !important;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul li {
+                margin-left: 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .checklist-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .action-button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header>
+    <div class="container header-container">
+
+        <div class="logo">
+            <a href="#home">
+                <img src="Images/LogoTest3.jpg" alt="Soapy Rides Logo" class="logo-img">
+            </a>
+        </div>
+
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="checklist.html" class="active">Checklist</a></li>
+            </ul>
+        </nav>
+        <a href="index.html#contact" class="cta-button">Book Now</a>
+        <div class="mobile-menu" id="mobileMenu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Car Wash Business Startup Checklist</h1>
+            <p>Your step-by-step guide to launching a successful car wash business. Track your progress as you complete each essential task.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Checklist Section -->
+<section class="checklist-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Startup Checklist</h2>
+            <p>Complete these tasks to launch your car wash business successfully</p>
+        </div>
+
+        <!-- Progress Overview -->
+        <div class="progress-container">
+            <div class="progress-header">
+                <div class="progress-title">Overall Progress</div>
+                <div class="progress-percentage" id="overallProgress">0%</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">0 of 42 tasks completed</div>
+        </div>
+
+        <!-- Checklist Categories -->
+        <div class="checklist-categories">
+            <!-- Planning & Research -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="category-title">Planning & Research</div>
+                    <div class="category-progress" id="planningProgress">0%</div>
+                </div>
+                <div class="checklist-items">
+                    <div class="checklist-item" data-category="planning">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Conduct market research</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="planning">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Define your target market</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="planning">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Analyze competitors</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="planning">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Determine business model (self-service, automatic, etc.)</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="planning">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Create a business plan</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="planning">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Set business goals and objectives</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="planning">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Develop pricing strategy</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legal & Registration -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="category-title">Legal & Registration</div>
+                    <div class="category-progress" id="legalProgress">0%</div>
+                </div>
+                <div class="checklist-items">
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Choose a business name</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Register your business</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Obtain necessary licenses and permits</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Apply for tax identification number</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Get business insurance</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Check zoning regulations</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Set up business banking account</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location & Setup -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="category-title">Location & Setup</div>
+                    <div class="category-progress" id="locationProgress">0%</div>
+                </div>
+                <div class="checklist-items">
+                    <div class="checklist-item" data-category="location">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Find and secure a location</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="location">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Negotiate lease or purchase property</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="location">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Design facility layout</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="location">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Arrange for water and drainage</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="location">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Set up electrical systems</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="location">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Install car wash equipment</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="location">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Set up payment systems</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipment & Supplies -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="category-title">Equipment & Supplies</div>
+                    <div class="category-progress" id="equipmentProgress">0%</div>
+                </div>
+                <div class="checklist-items">
+                    <div class="checklist-item" data-category="equipment">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Research and select car wash equipment</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="equipment">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Purchase or lease equipment</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="equipment">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Source cleaning chemicals and supplies</div>
+                        <span class="checklist-priority priority-high">High</span>
+                    </div>
+                    <div class="checklist-item" data-category="equipment">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Set up inventory management system</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="equipment">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Purchase point-of-sale system</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="equipment">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Acquire safety equipment</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="equipment">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Set up maintenance schedule for equipment</div>
+                        <span class="checklist-priority priority-low">Low</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Staffing -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="category-title">Staffing</div>
+                    <div class="category-progress" id="staffingProgress">0%</div>
+                </div>
+                <div class="checklist-items">
+                    <div class="checklist-item" data-category="staffing">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Determine staffing needs</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="staffing">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Create job descriptions</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="staffing">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Recruit and hire staff</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="staffing">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Develop training program</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="staffing">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Set up payroll system</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="staffing">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Create employee handbook</div>
+                        <span class="checklist-priority priority-low">Low</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marketing & Promotion -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="category-title">Marketing & Promotion</div>
+                    <div class="category-progress" id="marketingProgress">0%</div>
+                </div>
+                <div class="checklist-items">
+                    <div class="checklist-item" data-category="marketing">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Develop marketing plan</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="marketing">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Create business logo and branding</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="marketing">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Set up website and social media</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="marketing">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Plan grand opening event</div>
+                        <span class="checklist-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="checklist-item" data-category="marketing">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Print marketing materials</div>
+                        <span class="checklist-priority priority-low">Low</span>
+                    </div>
+                    <div class="checklist-item" data-category="marketing">
+                        <div class="checklist-checkbox"></div>
+                        <div class="checklist-text">Develop loyalty programs</div>
+                        <span class="checklist-priority priority-low">Low</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="checklist-actions">
+            <button class="action-button secondary" id="resetButton">
+                <i class="fas fa-redo"></i> Reset All Progress
+            </button>
+            <button class="action-button" id="printButton">
+                <i class="fas fa-print"></i> Print Checklist
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Soapy Rides</h3>
+                <p>Professional car wash and detailing services that bring back the shine to your vehicle.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="checklist.html">Startup Checklist</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Exterior Wash</a></li>
+                    <li><a href="#">Interior Detailing</a></li>
+                    <li><a href="#">Full Detailing Package</a></li>
+                    <li><a href="#">Mobile Service</a></li>
+                    <li><a href="#">Corporate Packages</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Car Care Street, Johannesburg</li>
+                    <li><i class="fas fa-phone"></i> +27 11 123 4567</li>
+                    <li><i class="fas fa-envelope"></i> info@soapyrides.co.za</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Soapy Rides. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+  // Mobile Menu Toggle
+  document.getElementById('mobileMenu').addEventListener('click', function() {
+    const nav = document.getElementById('mainNav');
+    nav.classList.toggle('active');
+  });
+
+  // Checklist Functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    // Load saved progress from localStorage
+    loadProgress();
+
+    // Add event listeners to all checkboxes
+    document.querySelectorAll('.checklist-checkbox').forEach(checkbox => {
+      checkbox.addEventListener('click', function() {
+        const item = this.parentElement;
+        item.classList.toggle('completed');
+        this.classList.toggle('checked');
+
+        // Save progress to localStorage
+        saveProgress();
+
+        // Update progress indicators
+        updateProgress();
+      });
+    });
+
+    // Reset button functionality
+    document.getElementById('resetButton').addEventListener('click', function() {
+      if(confirm('Are you sure you want to reset all progress?')) {
+        document.querySelectorAll('.checklist-item').forEach(item => {
+          item.classList.remove('completed');
+          item.querySelector('.checklist-checkbox').classList.remove('checked');
+        });
+
+        // Save progress to localStorage
+        saveProgress();
+
+        // Update progress indicators
+        updateProgress();
+      }
+    });
+
+    // Print button functionality
+    document.getElementById('printButton').addEventListener('click', function() {
+      window.print();
+    });
+
+    // Update progress indicators
+    updateProgress();
+  });
+
+  // Save progress to localStorage
+  function saveProgress() {
+    const progress = {};
+    document.querySelectorAll('.checklist-item').forEach((item, index) => {
+      progress[index] = item.classList.contains('completed');
+    });
+    localStorage.setItem('carWashChecklistProgress', JSON.stringify(progress));
+  }
+
+  // Load progress from localStorage
+  function loadProgress() {
+    const savedProgress = localStorage.getItem('carWashChecklistProgress');
+    if (savedProgress) {
+      const progress = JSON.parse(savedProgress);
+      document.querySelectorAll('.checklist-item').forEach((item, index) => {
+        if (progress[index]) {
+          item.classList.add('completed');
+          item.querySelector('.checklist-checkbox').classList.add('checked');
+        }
+      });
+    }
+  }
+
+  // Update progress indicators
+  function updateProgress() {
+    // Overall progress
+    const totalItems = document.querySelectorAll('.checklist-item').length;
+    const completedItems = document.querySelectorAll('.checklist-item.completed').length;
+    const overallPercentage = Math.round((completedItems / totalItems) * 100);
+
+    document.getElementById('overallProgress').textContent = `${overallPercentage}%`;
+    document.getElementById('progressFill').style.width = `${overallPercentage}%`;
+    document.getElementById('progressText').textContent = `${completedItems} of ${totalItems} tasks completed`;
+
+    // Category progress
+    const categories = ['planning', 'legal', 'location', 'equipment', 'staffing', 'marketing'];
+
+    categories.forEach(category => {
+      const categoryItems = document.querySelectorAll(`.checklist-item[data-category="${category}"]`);
+      const completedCategoryItems = document.querySelectorAll(`.checklist-item[data-category="${category}"].completed`);
+      const categoryPercentage = Math.round((completedCategoryItems.length / categoryItems.length) * 100);
+
+      document.getElementById(`${category}Progress`).textContent = `${categoryPercentage}%`;
+    });
+  }
+</script>
+</body>
+</html>
